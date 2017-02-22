@@ -22,12 +22,13 @@ export class HomePage {
 
   btnLoginClicked() {
     console.log("btnLoginClicked");
+    // var usrInput = this.userInput
     this.callLoginAPI().then(data => {
       console.log(data);
       let userData = data["data"]
       let user = new User(userData);
       console.log('Username' + user.username);
-      this.showToast('Successfully Login');
+      this.showToast('Successfully Login'  + user.username)
       this.navCtrl.push(Dashboard);
     }, error => {
       this.showToast('Error occured')
