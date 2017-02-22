@@ -27,10 +27,10 @@ export class HomePage {
       let userData = data["data"]
       let user = new User(userData);
       console.log('Username' + user.username);
+      this.showToast('Successfully Login');
       this.navCtrl.push(Dashboard);
-      this.showToast('Successfully Login', 'bottom')
     }, error => {
-      this.showToast('Error occured', 'bottom')
+      this.showToast('Error occured')
     });
   }
 
@@ -59,10 +59,10 @@ export class HomePage {
     return Observable.throw(error.json().error || 'Server error');
   }
 
-  showToast(message, position) {
+  showToast(message) {
     let toast = this.toastCtrl.create({
-      message: 'message',
-      duration: 3000
+      message: message,
+      duration: 1000
     });
     toast.present();
   }
