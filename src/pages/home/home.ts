@@ -9,7 +9,6 @@ import { User } from '../../models/user';
 import { ToastController } from 'ionic-angular';
 import { Registration } from '../registration/registration';
 
-declare var window: any;
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
@@ -33,7 +32,7 @@ export class HomePage {
         let user = new User(userData);
         console.log('Username' + user.username);
         this.showToast('Successfully Login' + user.username)
-        this.navCtrl.push(Dashboard);
+        this.navCtrl.push(Dashboard, { "xAuthToken": data["xAuthToken"] });
       }, error => {
         this.showToast('Error occured' + error)
       });
