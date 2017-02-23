@@ -1,0 +1,39 @@
+<ion-header>
+</ion-header>
+
+<ion-content padding>
+    <br>
+    <br>
+    <div class="col col-center">
+        <h4 align="center">Registration</h4>
+    </div>
+    <ion-list>
+        <ion-item>
+            <ion-label floating>Email-id</ion-label>
+            <ion-input type="text" [(ngModel)]="EmailId" required></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label floating>Username</ion-label>
+            <ion-input type="text" [(ngModel)]="Username" required></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label floating>Password</ion-label>
+            <ion-input type="password" [(ngModel)]="password" required></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label floating>Confirm Password</ion-label>
+            <ion-input type="password" [(ngModel)]="Confirmpassword" required></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label floating>Mobile No</ion-label>
+            <ion-input type="text" [(ngModel)]="MobileNo" required></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label floating>Sex</ion-label>
+            <ion-input type="text" [(ngModel)]="Sex" required></ion-input>
+        </ion-item>
+    </ion-list>
+    <div class="col col-center">
+        <h4 align="center"> <button ion-button on-click='btnRegistrationClicked();'>Register</button></h4>
+    </div>
+</ion-content>

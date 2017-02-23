@@ -10,15 +10,15 @@
   <ion-list>
     <ion-item>
       <ion-label floating>Username</ion-label>
-      <ion-input type="text" [(ng-model)]="userInput"></ion-input>
+      <ion-input type="text" [(ngModel)]="userInput" required></ion-input>
     </ion-item>
     <ion-item>
       <ion-label floating>Password</ion-label>
-      <ion-input type="password" ></ion-input>
+      <ion-input type="password" [(ngModel)]="password" required></ion-input>
     </ion-item>
   </ion-list>
   <div class="col col-center">
     <h4 align="center"> <button ion-button on-click='btnLoginClicked();'>Login</button><br>
-      <button ion-button clear>Don't Have Account?  <u> Sign up</u></button></h4>
+      <button ion-button clear on-click='navigateUserToRegister();'>Don't Have Account?  <u> Sign up</u></button></h4>
   </div>
 </ion-content>
