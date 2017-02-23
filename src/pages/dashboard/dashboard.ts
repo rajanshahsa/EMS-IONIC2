@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { Http, Headers } from '@angular/http';
 import { ToastController } from 'ionic-angular';
+import { ExpenseDetails } from '../expenseDetails/expenseDetails'
 
 @Component({
   selector: 'page-dashboard',
@@ -52,5 +53,8 @@ export class Dashboard {
 
   didAssign(expense: any): void {
     console.log("Hello " + expense);
+    console.log("Navigation" + this.navCtrl);
+    this.navCtrl.push(ExpenseDetails);
+    // this.navCtrl.push(ExpenseDetails, { "xAuthToken": this.xAuthToken, "expenses": expense });
   }
 }

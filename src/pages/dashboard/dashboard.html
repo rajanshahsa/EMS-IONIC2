@@ -6,11 +6,10 @@
 
 <ion-content padding>
   <ion-list>
-    <ion-item *ngFor="let expense of expensesArray" (on-click)="didAssign(expense)">
+    <ion-item *ngFor="let expense of expensesArray" (click)="didAssign(expense)">
       <h2> Title : {{expense.title}}</h2>
       <h4 align="left"> Amount : {{expense.amount}} Type : {{expense.expenseType}}</h4>
       <p> Date : {{expense.data}}<br></p>
     </ion-item>
   </ion-list>
-
 </ion-content>
