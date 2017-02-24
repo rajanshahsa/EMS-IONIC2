@@ -31,7 +31,7 @@ export class Registration {
             let userData = data["data"]
             let user = new User(userData);
             console.log('Username' + user.username);
-            this.showToast('Successfully Login' + user.username)
+            this.showToast('Successfully Registration' + user.username)
             this.navCtrl.push(Dashboard, { "xAuthToken": data["xAuthToken"] });
         }, error => {
             this.showToast('Error occured' + error)
