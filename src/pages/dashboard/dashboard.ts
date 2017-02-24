@@ -54,7 +54,6 @@ export class Dashboard {
   didAssign(expense: any): void {
     console.log("Hello " + expense);
     console.log("Navigation" + this.navCtrl);
-    this.navCtrl.push(ExpenseDetails);
-    // this.navCtrl.push(ExpenseDetails, { "xAuthToken": this.xAuthToken, "expenses": expense });
+    this.navCtrl.push(ExpenseDetails, { "xAuthToken": this.xAuthToken, "expenses": expense });
   }
 }
