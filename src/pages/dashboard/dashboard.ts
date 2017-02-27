@@ -3,6 +3,7 @@ import { NavController, NavParams } from 'ionic-angular';
 import { Http, Headers } from '@angular/http';
 import { ToastController } from 'ionic-angular';
 import { ExpenseDetails } from '../expenseDetails/expenseDetails'
+import { AddExpense } from '../addExpense/addExpense'
 
 @Component({
   selector: 'page-dashboard',
@@ -55,5 +56,9 @@ export class Dashboard {
     console.log("Hello " + expense);
     console.log("Navigation" + this.navCtrl);
     this.navCtrl.push(ExpenseDetails, { "xAuthToken": this.xAuthToken, "expenses": expense });
+  }
+
+  addNewExpense() {
+    this.navCtrl.push(AddExpense, { "xAuthToken": this.xAuthToken });
   }
 }
