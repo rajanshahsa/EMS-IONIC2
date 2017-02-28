@@ -32,6 +32,10 @@
             <ion-label floating>Sex</ion-label>
             <ion-input type="text" [(ngModel)]="Sex" required></ion-input>
         </ion-item>
+        <ion-item class="text-label">
+            <ion-label primary>Date:</ion-label>
+            <ion-datetime displayFormat="DD/MMM/YYYY" max="2018-12-31" [(ngModel)]="transferDate"></ion-datetime>
+        </ion-item>
     </ion-list>
     <div class="col col-center">
         <h4 align="center"> <button ion-button on-click='btnRegistrationClicked();'>Register</button></h4>

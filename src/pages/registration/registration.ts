@@ -46,9 +46,10 @@ export class Registration {
                 emailId: this.EmailId,
                 password: this.password,
                 mobileNo: this.MobileNo,
-                userName: this.Username,
+                username: this.Username,
                 sex: this.Sex,
-                userType: "user"
+                userType: "user",
+                dob : 19-10-1990
             }
             console.log(body);
             var headers = new Headers();

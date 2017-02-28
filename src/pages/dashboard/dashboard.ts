@@ -18,23 +18,18 @@ export class Dashboard {
   }
 
   getAllData() {
-    console.log("xAuthToken:  " + this.xAuthToken);
     this.callDashboardWS().then(data => {
-      console.log(data);
       this.expensesArray = data;
     }, error => {
-      console.log("xAuthToken:  " + this.xAuthToken);
       this.showToast('Error occured' + error)
     });
   }
 
   callDashboardWS() {
-    console.log("xAuthToken:  " + this.xAuthToken);
     return new Promise((resolve, reject) => {
       var url = 'http://127.0.0.1:3000/user/dashboard';
       var headers = new Headers();
       headers.append('xAuthToken', this.xAuthToken);
-      // headers.append('Content-Type', 'application/json');
       this.http.get(url, {
         headers: headers
       }).map(res => res.json()).subscribe(data => {
@@ -53,8 +48,6 @@ export class Dashboard {
   }
 
   didAssign(expense: any): void {
-    console.log("Hello " + expense);
-    console.log("Navigation" + this.navCtrl);
     this.navCtrl.push(ExpenseDetails, { "xAuthToken": this.xAuthToken, "expenses": expense });
   }
 

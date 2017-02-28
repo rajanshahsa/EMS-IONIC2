@@ -25,27 +25,29 @@ export class AddExpense {
     }
 
     getAllData() {
-        console.log("xAuthToken:  " + this.xAuthToken);
         this.callGetUserWS().then(data => {
-            console.log(data);
+            let userData = data["data"]
+            for (let i = 0; i < data["data"].length; i++) {
+                let tempData = data["data"][i]
+                console.log("Temp " + i + " Data " + tempData)
+            }
+            console.log("User Array  " + userData)
             this.userArray = data;
         }, error => {
-            console.log("xAuthToken:  " + this.xAuthToken);
             this.showToast('Error occured' + error)
         });
     }
 
     callGetUserWS() {
-        console.log("xAuthToken:  " + this.xAuthToken);
         return new Promise((resolve, reject) => {
             var url = 'http://127.0.0.1:3000/user/getUser';
             var headers = new Headers();
             headers.append('xAuthToken', this.xAuthToken);
-            // headers.append('Content-Type', 'application/json');
             this.http.get(url, {
                 headers: headers
             }).map(res => res.json()).subscribe(data => {
                 data = data;
+                console.log("Hello" + data)
                 resolve(data);
             }, error => reject(error), () => console.log("Finished"));
         });
