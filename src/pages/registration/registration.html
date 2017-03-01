@@ -1,16 +1,14 @@
 <ion-header>
+    <ion-navbar>
+        <ion-title>Registration</ion-title>
+    </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-    <br>
-    <br>
-    <div class="col col-center">
-        <h4 align="center">Registration</h4>
-    </div>
     <ion-list>
         <ion-item>
             <ion-label floating>Email-id</ion-label>
-            <ion-input type="text" [(ngModel)]="EmailId" required></ion-input>
+            <ion-input type="email" [(ngModel)]="EmailId" required></ion-input>
         </ion-item>
         <ion-item>
             <ion-label floating>Username</ion-label>
@@ -26,15 +24,15 @@
         </ion-item>
         <ion-item>
             <ion-label floating>Mobile No</ion-label>
-            <ion-input type="text" [(ngModel)]="MobileNo" required></ion-input>
+            <ion-input type="number" [(ngModel)]="MobileNo" required></ion-input>
         </ion-item>
         <ion-item>
             <ion-label floating>Sex</ion-label>
             <ion-input type="text" [(ngModel)]="Sex" required></ion-input>
         </ion-item>
         <ion-item class="text-label">
-            <ion-label primary>Date:</ion-label>
-            <ion-datetime displayFormat="DD/MMM/YYYY" max="2018-12-31" [(ngModel)]="transferDate"></ion-datetime>
+            <ion-label floating>Date:</ion-label>
+            <ion-datetime displayFormat="DD/MMM/YYYY" [(ngModel)]="transferDate"></ion-datetime>
         </ion-item>
     </ion-list>
     <div class="col col-center">
