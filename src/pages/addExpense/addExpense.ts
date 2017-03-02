@@ -10,9 +10,10 @@ import { ToastController } from 'ionic-angular';
 export class AddExpense {
     xAuthToken
     userArray
-
+    zones
     constructor(public navCtrl: NavController, private http: Http, public toastCtrl: ToastController, private navParams: NavParams) {
         this.xAuthToken = navParams.get('xAuthToken');
+        this.zones = ["Rajan", "Deepak", "Devang"]
         this.getAllData()
     }
 

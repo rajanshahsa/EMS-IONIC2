@@ -19,7 +19,6 @@
         <ion-item>
             <ion-label floating>Expense Type</ion-label>
             <ion-select [(ngModel)]="expenseType">
-                <ion-option value="Dinner">Dinner</ion-option>
                 <ion-option value="Lunch">Lunch</ion-option>
                 <ion-option value="Breakfast">Breakfast</ion-option>
                 <ion-option value="Entertainment">Entertainment</ion-option>
@@ -29,16 +28,18 @@
             <ion-label floating>Description</ion-label>
             <ion-input type="text" [(ngModel)]="description" required></ion-input>
         </ion-item>
-        <ion-item class="text-label">
+        <ion-item>
             <ion-label floating>Date:</ion-label>
             <ion-datetime displayFormat="DD/MMM/YYYY" [(ngModel)]="expenseDate"></ion-datetime>
         </ion-item>
-        <ion-item class="text-label">
+        <ion-item>
             <ion-label floating>Paid by</ion-label>
-            <ion-label floating>Name</ion-label>
-            <ion-input type="text" [(ngModel)]="PaidBy" required></ion-input>
+            <ion-select [(ngModel)]="PaidBy">
+                <ion-option *ngFor="let key of zones">{{key}}</ion-option>
+            </ion-select>
         </ion-item>
         <ion-item>
+            <ion-label floating>Contributors</ion-label>
             <ion-buttons end>
                 <ion-icon ios="ios-add-circle" md="md-add-circle"></ion-icon>
             </ion-buttons>
