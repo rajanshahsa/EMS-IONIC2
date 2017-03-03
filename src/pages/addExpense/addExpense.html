@@ -6,7 +6,7 @@
         </ion-buttons>
     </ion-navbar>
 </ion-header>
-<ion-content padding>
+<ion-content>
     <ion-list>
         <ion-item>
             <ion-label floating>Title</ion-label>
@@ -35,11 +35,11 @@
         <ion-item>
             <ion-label floating>Paid by</ion-label>
             <ion-select [(ngModel)]="PaidBy">
-                <ion-option *ngFor="let key of zones">{{key}}</ion-option>
+                <ion-option *ngFor="let user of userArray" value = {{user.userId}}>{{user.username}}</ion-option>
             </ion-select>
         </ion-item>
         <ion-item>
-            <ion-label floating>Contributors</ion-label>
+            <ion-label>Contributors</ion-label>
             <ion-buttons end>
                 <ion-icon ios="ios-add-circle" md="md-add-circle"></ion-icon>
             </ion-buttons>

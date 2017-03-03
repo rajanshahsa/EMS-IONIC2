@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { Http, Headers } from '@angular/http';
 import { ToastController } from 'ionic-angular';
-
+import { User } from '../../models/user';
 @Component({
     selector: 'page-addExpense',
     templateUrl: 'addExpense.html'
@@ -10,11 +10,9 @@ import { ToastController } from 'ionic-angular';
 export class AddExpense {
     xAuthToken
     userArray
-    zones
     constructor(public navCtrl: NavController, private http: Http, public toastCtrl: ToastController, private navParams: NavParams) {
         this.xAuthToken = navParams.get('xAuthToken');
-        this.zones = ["Rajan", "Deepak", "Devang"]
-        this.getAllData()
+        this.getAllData();
     }
 
     showToast(message) {
@@ -26,14 +24,17 @@ export class AddExpense {
     }
 
     getAllData() {
+        let tempUserArray = []
         this.callGetUserWS().then(data => {
-            let userData = data["data"]
-            for (let i = 0; i < data["data"].length; i++) {
-                let tempData = data["data"][i]
-                console.log("Temp " + i + " Data " + tempData)
+            let userData = data["data"];
+            for (let i = 0; i < userData.length; i++) {
+                let tempData = userData[i];
+                let user = new User(tempData);
+                console.log("Temp " + i + " Data " + user.username);
+                tempUserArray.push(user);
             }
-            console.log("User Array  " + userData)
-            this.userArray = data;
+            this.userArray = tempUserArray
+            console.log("User Array  " + this.userArray)
         }, error => {
             this.showToast('Error occured' + error)
         });
