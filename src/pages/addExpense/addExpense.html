@@ -6,7 +6,7 @@
         </ion-buttons>
     </ion-navbar>
 </ion-header>
-<ion-content>
+<ion-content class="outer-content">
     <ion-list>
         <ion-item>
             <ion-label floating>Title</ion-label>
@@ -35,7 +35,7 @@
         <ion-item>
             <ion-label floating>Paid by</ion-label>
             <ion-select [(ngModel)]="PaidBy">
-                <ion-option *ngFor="let user of userArray" value = {{user.userId}}>{{user.username}}</ion-option>
+                <ion-option *ngFor="let user of userArray" value={ {user.userId}}>{{user.username}}</ion-option>
             </ion-select>
         </ion-item>
         <ion-item>
