@@ -6,16 +6,18 @@
         </ion-buttons>
     </ion-navbar>
 </ion-header>
-<ion-content class="outer-content">
+<ion-content>
     <ion-list>
         <ion-item>
             <ion-label floating>Title</ion-label>
             <ion-input type="text" [(ngModel)]="title" required></ion-input>
         </ion-item>
+
         <ion-item>
             <ion-label floating>Amount</ion-label>
             <ion-input type="tel" [(ngModel)]="amount" required></ion-input>
         </ion-item>
+
         <ion-item>
             <ion-label floating>Expense Type</ion-label>
             <ion-select [(ngModel)]="expenseType">
@@ -24,25 +26,37 @@
                 <ion-option value="Entertainment">Entertainment</ion-option>
             </ion-select>
         </ion-item>
+
         <ion-item>
             <ion-label floating>Description</ion-label>
             <ion-input type="text" [(ngModel)]="description" required></ion-input>
         </ion-item>
+
         <ion-item>
             <ion-label floating>Date:</ion-label>
             <ion-datetime displayFormat="DD/MMM/YYYY" [(ngModel)]="expenseDate"></ion-datetime>
         </ion-item>
+
         <ion-item>
             <ion-label floating>Paid by</ion-label>
             <ion-select [(ngModel)]="PaidBy">
                 <ion-option *ngFor="let user of userArray" value={ {user.userId}}>{{user.username}}</ion-option>
             </ion-select>
         </ion-item>
+
         <ion-item>
-            <ion-label>Contributors</ion-label>
-            <ion-buttons end>
-                <ion-icon ios="ios-add-circle" md="md-add-circle"></ion-icon>
-            </ion-buttons>
+            <ion-label floating>Amount</ion-label>
+            <ion-input type="tel" [(ngModel)]="amount" required></ion-input>
         </ion-item>
+
+
+        <ion-item>
+            <ion-list item-content>
+                <ion-item *ngFor="let item of userArray">
+                    {{item.username}}
+                </ion-item>
+            </ion-list>
+        </ion-item>
+
     </ion-list>
 </ion-content>

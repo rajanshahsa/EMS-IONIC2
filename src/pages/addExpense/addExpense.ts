@@ -30,11 +30,9 @@ export class AddExpense {
             for (let i = 0; i < userData.length; i++) {
                 let tempData = userData[i];
                 let user = new User(tempData);
-                console.log("Temp " + i + " Data " + user.username);
                 tempUserArray.push(user);
             }
             this.userArray = tempUserArray
-            console.log("User Array  " + this.userArray)
         }, error => {
             this.showToast('Error occured' + error)
         });
