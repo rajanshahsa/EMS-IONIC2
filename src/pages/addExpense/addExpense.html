@@ -45,18 +45,10 @@
         </ion-item>
 
         <ion-item>
-            <ion-label floating>Amount</ion-label>
-            <ion-input type="tel" [(ngModel)]="amount" required></ion-input>
+            Contributor
+            <button ion-button outline item-right icon-left on-click='showAlert();'>
+      <ion-icon name="add"></ion-icon>
+    </button>
         </ion-item>
-
-
-        <ion-item>
-            <ion-list item-content>
-                <ion-item *ngFor="let item of userArray">
-                    {{item.username}}
-                </ion-item>
-            </ion-list>
-        </ion-item>
-
     </ion-list>
 </ion-content>
