@@ -3,7 +3,6 @@ import { NavController, NavParams } from 'ionic-angular';
 import { Http, Headers } from '@angular/http';
 import { ToastController } from 'ionic-angular';
 import { User } from '../../models/user';
-import { AlertController } from 'ionic-angular';
 
 @Component({
     selector: 'page-addExpense',
@@ -12,7 +11,8 @@ import { AlertController } from 'ionic-angular';
 export class AddExpense {
     xAuthToken
     userArray
-    constructor(public navCtrl: NavController, private http: Http, public toastCtrl: ToastController, private navParams: NavParams, public alertCtrl: AlertController) {
+    contributorArray
+    constructor(public navCtrl: NavController, private http: Http, public toastCtrl: ToastController, private navParams: NavParams) {
         this.xAuthToken = navParams.get('xAuthToken');
         this.getAllData();
     }
@@ -56,35 +56,9 @@ export class AddExpense {
     }
 
     showAlert() {
-        console.log("AlertController: " + this.alertCtrl);
-        let prompt = this.alertCtrl.create({
-            title: 'EMS',
-            message: "Enter a name & Amount of contributor",
-            inputs: [
-                {
-                    name: 'name',
-                    placeholder: 'Name'
-                },
-                {
-                    name: 'amount',
-                    placeholder: 'Amount'
-                },
-            ],
-            buttons: [
-                {
-                    text: 'Cancel',
-                    handler: data => {
-                        console.log('Cancel clicked');
-                    }
-                },
-                {
-                    text: 'Save',
-                    handler: data => {
-                        console.log('Saved clicked');
-                    }
-                }
-            ]
-        });
-        prompt.present();
+        let count = 1;
+        console.log(count);
+        this.contributorArray.push(count);
+        console.log("contributorArray count " + this.contributorArray.count);
     }
 }
